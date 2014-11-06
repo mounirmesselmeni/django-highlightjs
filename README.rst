@@ -39,9 +39,10 @@ The ``HIGHLIGHTJS`` dict variable is contains these settings and defaults:
       'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{}.min.css',
       # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
       'include_jquery': False,
-      # The default use style available at https://github.com/isagalaev/highlight.js/tree/master/src/styles
+      # The default used style.
       'style': 'monokai_sublime',
       }
+
 
 Usage in your `settings.py`:
    .. code:: Python
@@ -49,6 +50,9 @@ Usage in your `settings.py`:
     HIGHLIGHTJS = {
       'style': 'github',
     }
+
+All other styles available at https://github.com/isagalaev/highlight.js/tree/master/src/styles 
+   
 
 Example template
 ----------------
