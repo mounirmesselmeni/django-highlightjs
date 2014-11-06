@@ -21,11 +21,44 @@ Installation
 
 3. In your templates, load the ``highlightjs`` library and use the ``highlightjs_*`` tags:
 
+Settings
+--------
+
+The django-highlightjs has some pre-configured settings.
+They can be modified by adding a dict variable called ``HIGHLIGHTJS`` in your ``settings.py`` and customizing the values you want.
+The ``HIGHLIGHTJS`` dict variable is contains these settings and defaults:
+   
+   .. code:: Python
+
+    HIGHLIGHTJS = {
+      # The URL to the jQuery JavaScript file
+      'jquery_url': '//code.jquery.com/jquery.min.js',
+      # The highlight.js base URL
+      'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js',
+      # The complete URL to the highlight.js CSS file
+      'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{}.min.css',
+      # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
+      'include_jquery': False,
+      # The default used style.
+      'style': 'monokai_sublime',
+      }
+
+
+Usage in your `settings.py`:
+   .. code:: Python
+
+    HIGHLIGHTJS = {
+      'style': 'github',
+    }
+
+All other styles available at https://github.com/isagalaev/highlight.js/tree/master/src/styles 
+   
 
 Example template
 ----------------
 
    .. code:: Django
+
     {% load highlightjs %}
     <html>
     <head>
@@ -62,7 +95,7 @@ https://github.com/MounirMesselmeni/django-highlightjs/issues
 License
 -------
 
-You can use this under Apache 2.0. See `LICENSE
+You can use this under MIT See `LICENSE
 <LICENSE>`_ file for details.
 
 
