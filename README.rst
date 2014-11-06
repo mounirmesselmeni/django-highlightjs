@@ -3,7 +3,7 @@ Welcome to django-highlightjs
 ============================
 
 
-Use [Highlight.js][1] in your Django templates, the Django way.
+Use Highlight.js (https://highlightjs.org) in your Django templates, the Django way.
 
 
 Installation
@@ -70,5 +70,3 @@ Author
 ------
 
 My name is Mounir Messelmeni, you can reach me at messelmeni.mounir@gmail.com .
-
-[1]: https://highlightjs.org
