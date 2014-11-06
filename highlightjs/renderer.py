@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.utils.html import escape
 from django.forms.widgets import flatatt
 from django.utils.safestring import mark_safe
 
@@ -26,7 +27,7 @@ def render_tag(attrs=None, content=None):
     builder = '<pre><code{attrs}>{content}</code></pre>'
     return builder.format(
         attrs=flatatt(attrs) if attrs else '',
-        content=text_value(content),
+        content=escape(text_value(content)),
     )
 
 
