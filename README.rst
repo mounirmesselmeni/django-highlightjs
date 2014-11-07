@@ -2,6 +2,9 @@
 Welcome to django-highlightjs
 ============================
 
+.. image:: https://travis-ci.org/MounirMesselmeni/django-highlightjs.png?branch=master
+    :target: https://travis-ci.org/MounirMesselmeni/django-highlightjs
+
 .. image:: https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=master
   :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=master
 
