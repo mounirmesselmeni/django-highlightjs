@@ -2,6 +2,14 @@
 Welcome to django-highlightjs
 ============================
 
+.. image:: https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=master
+  :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=master
+
+
+.. image:: https://pypip.in/version/django-highlightjs/badge.svg
+    :target: https://pypi.python.org/pypi/django-highlightjs/
+    :alt: Latest Version
+
 
 Use Highlight.js (https://highlightjs.org) in your Django templates, the Django way.
 
