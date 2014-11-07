@@ -16,7 +16,13 @@ HIGHLIGHTJS_DEFAULTS = {
 HIGHLIGHTJS = HIGHLIGHTJS_DEFAULTS.copy()
 
 # Override with user settings from settings.py
-HIGHLIGHTJS.update(getattr(settings, 'HIGHLIGHTJS', {}))
+def update_settings():
+    """
+    Useful method in test to update settings when using @override_settings
+    """
+    HIGHLIGHTJS.update(getattr(settings, 'HIGHLIGHTJS', {}))
+
+update_settings()
 
 
 def get_highlightjs_setting(setting, default=None):

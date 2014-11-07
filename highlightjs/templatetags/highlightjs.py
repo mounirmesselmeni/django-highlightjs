@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django import template
 from django.template.loader import get_template
 
-from ..settings import highlightjs_url, highlightjs_jquery_url, css_url
+from ..settings import highlightjs_url, highlightjs_jquery_url, css_url, get_highlightjs_setting
 from ..renderer import render_highlightjs
 
 
