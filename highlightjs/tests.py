@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 
+from django.test import TestCase
 from django.utils.html import escape
 from django.template import Template, Context
-from django.test import TestCase, override_settings
+from django.test.utils import override_settings
 
 from . import settings
 
