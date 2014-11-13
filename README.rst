@@ -47,7 +47,7 @@ The ``HIGHLIGHTJS`` dict variable is contains these settings and defaults:
       # The highlight.js base URL
       'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js',
       # The complete URL to the highlight.js CSS file
-      'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{}.min.css',
+      'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{0}.min.css',
       # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
       'include_jquery': False,
       # The default used style.
