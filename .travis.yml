@@ -29,11 +29,11 @@ script:
 matrix:
   exclude:
     - python: "3.2"
-      env: DJANGO_VERSION=1.4.16
+      env: DJANGO_VERSION=1.4.20
     - python: "3.3"
-      env: DJANGO_VERSION=1.4.16
+      env: DJANGO_VERSION=1.4.20
     - python: "3.4"
-      env: DJANGO_VERSION=1.4.16
+      env: DJANGO_VERSION=1.4.20
     - python: "3.2"
       env: DJANGO_VERSION=1.5.11
     - python: "3.3"
