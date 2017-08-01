@@ -38,7 +38,7 @@ Settings
 The django-highlightjs has some pre-configured settings.
 They can be modified by adding a dict variable called ``HIGHLIGHTJS`` in your ``settings.py`` and customizing the values you want.
 The ``HIGHLIGHTJS`` dict variable is contains these settings and defaults:
-   
+
    .. code:: Python
 
     HIGHLIGHTJS = {
@@ -62,8 +62,8 @@ Usage in your `settings.py`:
       'style': 'github',
     }
 
-All other styles available at https://github.com/isagalaev/highlight.js/tree/master/src/styles 
-   
+All other styles available at https://github.com/isagalaev/highlight.js/tree/master/src/styles
+
 
 Example template
 ----------------
@@ -89,8 +89,8 @@ Example template
 Requirements
 ------------
 
-- Python 2.6, 2.7, 3.2, 3.3 or 3.4
-- Django >= 1.4
+- Python 2.7, 3.4, 3.5 or 3.6
+- Django >= 1.8
 
 Contributions and pull requests for other Django and Python versions are welcome.
 
