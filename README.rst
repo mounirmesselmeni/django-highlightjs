@@ -9,7 +9,7 @@ Welcome to django-highlightjs
   :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=master
 
 
-.. image:: https://pypip.in/version/django-highlightjs/badge.svg
+.. image:: https://img.shields.io/pypi/v/django-highlightjs.svg
     :target: https://pypi.python.org/pypi/django-highlightjs/
     :alt: Latest Version
 
