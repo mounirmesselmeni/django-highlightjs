@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django import template
 from django.template.loader import get_template
+from django.utils.safestring import mark_safe
 
 from ..settings import highlightjs_url, highlightjs_jquery_url, css_url, get_highlightjs_setting
 from ..renderer import render_highlightjs
@@ -71,12 +72,12 @@ def highlightjs_javascript(jquery=None):
     if jquery:
         url = highlightjs_jquery_url()
         if url:
-            javascript += '<script src="{url}"></script>'.format(url=url)
+            javascript += '<script src="{url}" defer></script>'.format(url=url)
     url = highlightjs_url()
     if url:
-        javascript += '<script src="{url}"></script>'.format(url=url)
-    javascript += '<script>hljs.initHighlightingOnLoad();</script>'
-    return javascript
+        javascript += '<script src="{url}" defer></script>'.format(url=url)
+    javascript += '<script src="data:text/javascript,hljs.initHighlightingOnLoad%28%29" defer></script>'
+    return mark_safe(javascript)
 
 
 @register.simple_tag
