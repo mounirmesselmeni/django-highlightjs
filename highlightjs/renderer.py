@@ -9,7 +9,7 @@ def text_value(value):
     Force a value to text, render None as an empty string
     """
     if value is None:
-        return ''
+        return ""
     return force_text(value)
 
 
@@ -17,13 +17,13 @@ def render_tag(attrs=None, content=None):
     """
     Render a HTML tag
     """
-    builder = '<pre><code{attrs}>{content}</code></pre>'
+    builder = "<pre><code{attrs}>{content}</code></pre>"
     return builder.format(
-        attrs=flatatt(attrs) if attrs else '',
+        attrs=flatatt(attrs) if attrs else "",
         content=escape(text_value(content)),
     )
 
 
 def render_highlightjs(context_var, language=None):
-    attrs = {'class': language} if language else None
+    attrs = {"class": language} if language else None
     return mark_safe(render_tag(attrs=attrs, content=context_var))

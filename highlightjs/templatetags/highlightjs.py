@@ -1,7 +1,11 @@
 from django import template
-from django.template.loader import get_template
 
-from ..settings import highlightjs_url, highlightjs_jquery_url, css_url, get_highlightjs_setting
+from ..settings import (
+    highlightjs_url,
+    highlightjs_jquery_url,
+    css_url,
+    get_highlightjs_setting,
+)
 from ..renderer import render_highlightjs
 
 
@@ -61,10 +65,10 @@ def highlightjs_javascript(jquery=None):
         {% highlightjs_javascript jquery=1 %}
     """
 
-    javascript = ''
+    javascript = ""
     # See if we have to include jQuery
     if jquery is None:
-        jquery = get_highlightjs_setting('include_jquery', False)
+        jquery = get_highlightjs_setting("include_jquery", False)
     if jquery:
         url = highlightjs_jquery_url()
         if url:
@@ -72,7 +76,7 @@ def highlightjs_javascript(jquery=None):
     url = highlightjs_url()
     if url:
         javascript += '<script src="{url}"></script>'.format(url=url)
-    javascript += '<script>hljs.initHighlightingOnLoad();</script>'
+    javascript += "<script>hljs.initHighlightingOnLoad();</script>"
     return javascript
 
 
