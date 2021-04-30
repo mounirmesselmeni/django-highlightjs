@@ -1,19 +1,7 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
-
-try:
-    from django.forms.widgets import flatatt
-except ImportError:
-    # Django >= 1.11
-    from django.forms.utils import flatatt
-
-try:
-    from django.utils.encoding import force_text
-except ImportError:
-    from django.utils.encoding import force_unicode as force_text
+from django.forms.utils import flatatt
+from django.utils.encoding import force_text
 
 
 def text_value(value):
