@@ -41,7 +41,8 @@ def highlightjs_javascript(jquery=None):
     """
     Return HTML for highlightjs JavaScript.
 
-    Adjust url in settings. If no url is returned, we don't want this statement to return any HTML.
+    Adjust url in settings. If no url is returned, we don't
+    want this statement to return any HTML.
     This is intended behavior.
 
     Default value: ``None``
