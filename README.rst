@@ -1,6 +1,6 @@
-============================
+=============================
 Welcome to django-highlightjs
-============================
+=============================
 
 .. image:: https://travis-ci.org/MounirMesselmeni/django-highlightjs.png?branch=master
     :target: https://travis-ci.org/MounirMesselmeni/django-highlightjs
