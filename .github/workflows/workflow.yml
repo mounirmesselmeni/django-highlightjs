@@ -49,6 +49,9 @@ jobs:
         if: matrix.django == 3.2
         run: pip install "Django>=3.2,<3.3"
 
+      - name: Install requirements
+        run: pip install -r requirements_test.txt
+
       - name: Install package
         run: pip install -e .
 
