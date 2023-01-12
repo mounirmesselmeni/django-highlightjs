@@ -6,6 +6,7 @@ authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
 license = "mit"
 readme = "README.rst"
 packages = [{include = "highlightjs"}]
+exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Web Environment",
