@@ -30,7 +30,7 @@ repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
 keywords = ["django", "highlightjs", "syntax", "highlighter", "syntax highlighter", "highlight.js"]
 
 [tool.poetry.dependencies]
-python = ">= 3.9"
+python = ">= 3.8"
 Django = ">= 2"
 
 [tool.poetry.group.dev.dependencies]
