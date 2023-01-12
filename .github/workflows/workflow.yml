@@ -26,7 +26,7 @@ jobs:
         id: poetry-cache
         uses: actions/cache@v2
         with:
-          path: ~/.cache/pypoetry
+          path: .venv
           key: ${{ runner.os }}-poetry-v1-${{ hashFiles('poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-poetry-v1-
