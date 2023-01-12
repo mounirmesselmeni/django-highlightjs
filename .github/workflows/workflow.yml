@@ -33,9 +33,9 @@ jobs:
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python -
-      - name: Set poetry to use  virtualenvs.create true
+      - name: Set poetry to use virtualenvs.in-project true
         run: |
-          poetry config virtualenvs.create true
+          poetry config virtualenvs.in-project true
       - name: Install dependencies
         run: |
           poetry install --with dev
