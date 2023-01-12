@@ -1,7 +1,7 @@
+from django.template import Context, Template
 from django.test import TestCase
-from django.utils.html import escape
-from django.template import Template, Context
 from django.test.utils import override_settings
+from django.utils.html import escape
 
 from . import settings
 

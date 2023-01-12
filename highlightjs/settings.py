@@ -1,6 +1,5 @@
 from django.conf import settings
 
-
 HIGHLIGHTJS_DEFAULTS = {
     "jquery_url": "//code.jquery.com/jquery.min.js",
     "base_url": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js",
