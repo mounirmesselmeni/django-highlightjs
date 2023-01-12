@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-poetry-v1-
       - name: Install Poetry
         run: |
-          curl -sSL https://install.python-poetry.org | sh
+          curl -sSL https://install.python-poetry.org | python -
       - name: Set poetry to use  virtualenvs.create true
         run: |
           poetry config virtualenvs.create true
