@@ -1,1 +1,5 @@
-__version__ = "0.2.5"
+import importlib.metadata
+
+__author__ = """Mounir Messelmeni"""
+__email__ = "messelmeni.mounir@gmai.com"
+__version__ = importlib.metadata.version("payla_utils")
