@@ -58,6 +58,8 @@ jobs:
       - name: Run tests and coverage
         run: |
           poetry run coverage run --source=highlightjs manage.py test
+          # output coverage report
+          poetry run coverage report
       - name: Publish coverage
         # only run on python 3.10 and django 4.1
         # no need to publish coverage for all python and django versions
