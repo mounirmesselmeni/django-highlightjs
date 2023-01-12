@@ -27,7 +27,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: ${{ runner.os }}-poetry-v1-${{ hashFiles('poetry.lock') }}
+          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-${{ hashFiles('poetry.lock') }}
           restore-keys: |
             ${{ runner.os }}-poetry-v1-
       - name: Install Poetry
