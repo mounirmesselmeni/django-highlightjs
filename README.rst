@@ -2,11 +2,8 @@
 Welcome to django-highlightjs
 =============================
 
-.. image:: https://travis-ci.org/MounirMesselmeni/django-highlightjs.png?branch=master
-    :target: https://travis-ci.org/MounirMesselmeni/django-highlightjs
-
-.. image:: https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=master
-  :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=master
+.. image:: https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=main
+  :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=main
 
 
 .. image:: https://img.shields.io/pypi/v/django-highlightjs.svg
@@ -45,9 +42,9 @@ The ``HIGHLIGHTJS`` dict variable is contains these settings and defaults:
       # The URL to the jQuery JavaScript file
       'jquery_url': '//code.jquery.com/jquery.min.js',
       # The highlight.js base URL
-      'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js',
+      'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js',
       # The complete URL to the highlight.js CSS file
-      'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{0}.min.css',
+      'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/{0}.min.css',
       # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
       'include_jquery': False,
       # The default used style.
@@ -62,7 +59,7 @@ Usage in your `settings.py`:
       'style': 'github',
     }
 
-All other styles available at https://github.com/isagalaev/highlight.js/tree/master/src/styles
+All other styles available at https://github.com/isagalaev/highlight.js/tree/main/src/styles
 
 
 Example template
@@ -89,8 +86,8 @@ Example template
 Requirements
 ------------
 
-- Python 3.6, 3.7, 3.8 or 3.9
-- Django >= 2.2
+- Python 3.8, 3.9, 3.10 or 3.11
+- Django >= 3
 
 Contributions and pull requests for other Django and Python versions are welcome.
 
