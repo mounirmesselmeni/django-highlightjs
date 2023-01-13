@@ -100,7 +100,7 @@ Bugs and requests
 
 If you have found a bug or if you have a request for additional functionality, please use the issue tracker on GitHub.
 
-https://github.com/MounirMesselmeni/django-highlightjs/issues
+https://github.com/mounirmesselmeni/django-highlightjs/issues
 
 
 License
