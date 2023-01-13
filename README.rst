@@ -2,6 +2,9 @@
 Welcome to django-highlightjs
 =============================
 
+.. image:: https://github.com/mounirmesselmeni/django-highlightjs/actions/workflows/workflow.yml/badge.svg
+  :target: https://github.com/mounirmesselmeni/django-highlightjs/actions?query=branch%3Amain++
+
 .. image:: https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=main
   :target: https://coveralls.io/r/MounirMesselmeni/django-highlightjs?branch=main
 
