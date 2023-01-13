@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "django-highlightjs"
+version = "0.2.6"
+description = "A Django app to easyily integrate highlight.js syntax highlighter."
+authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
+license = "mit"
+readme = "README.rst"
+packages = [{include = "highlightjs"}]
+exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
+repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
+keywords = ["django", "highlightjs", "syntax", "highlighter", "syntax highlighter", "highlight.js"]
+
+[tool.poetry.dependencies]
+python = ">= 3.8"
+Django = ">= 2"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "~6"
+coveralls = "~3"
+black = "^22.12.0"
+isort = "^5.11.4"
+pre-commit = "^2.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 90
+include = '\.pyi?$'
+skip-string-normalization = true
+exclude = '''
+/(
+  \.venv
+  | migrations
+  | \.cache
+  | \.pre-commit-cache
+)/
+'''
+
+[tool.isort]
+profile = "black"
+py_version=310
+multi_line_output = 3
+line_length = 90
+default_section = "THIRDPARTY"
+skip = ["migrations", ".venv", ".pre-commit-cache"]

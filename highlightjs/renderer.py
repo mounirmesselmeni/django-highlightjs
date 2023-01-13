@@ -1,7 +1,7 @@
+from django.forms.utils import flatatt
+from django.utils.encoding import force_str
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
-from django.forms.utils import flatatt
-from django.utils.encoding import force_text
 
 
 def text_value(value):
@@ -10,7 +10,7 @@ def text_value(value):
     """
     if value is None:
         return ""
-    return force_text(value)
+    return force_str(value)
 
 
 def render_tag(attrs=None, content=None):

@@ -1,10 +1,9 @@
 from django.conf import settings
 
-
 HIGHLIGHTJS_DEFAULTS = {
     "jquery_url": "//code.jquery.com/jquery.min.js",
-    "base_url": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js",
-    "css_url": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/{0}.min.css",
+    "base_url": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js",
+    "css_url": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/{0}.min.css",
     "include_jquery": False,
     "style": "monokai_sublime",
 }

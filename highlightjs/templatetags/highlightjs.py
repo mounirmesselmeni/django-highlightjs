@@ -1,13 +1,12 @@
 from django import template
 
+from ..renderer import render_highlightjs
 from ..settings import (
-    highlightjs_url,
-    highlightjs_jquery_url,
     css_url,
     get_highlightjs_setting,
+    highlightjs_jquery_url,
+    highlightjs_url,
 )
-from ..renderer import render_highlightjs
-
 
 register = template.Library()
 
@@ -73,10 +72,10 @@ def highlightjs_javascript(jquery=None):
     if jquery:
         url = highlightjs_jquery_url()
         if url:
-            javascript += '<script src="{url}"></script>'.format(url=url)
+            javascript += f'<script src="{url}"></script>'
     url = highlightjs_url()
     if url:
-        javascript += '<script src="{url}"></script>'.format(url=url)
+        javascript += f'<script src="{url}"></script>'
     javascript += "<script>hljs.initHighlightingOnLoad();</script>"
     return javascript
 

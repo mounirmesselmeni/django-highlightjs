@@ -1,0 +1,67 @@
+# Make sure pre-commit uses the same python version as we do
+default_language_version:
+  # default language version for each language
+  python: python3.10
+
+repos:
+  # Common builtin pre-commit hooks
+  # See https://pre-commit.com/hooks.html for more hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      # simply checks whether the files parse as valid python.
+      - id: check-ast
+      # checks for files that would conflict in case-insensitive filesystem.
+      - id: check-case-conflict
+      # checks for files that contain merge conflict strings.
+      - id: check-merge-conflict
+      # checks for debugger imports and py37+ `breakpoint()` calls in python source.
+      - id: debug-statements
+      # ensures that a file is either empty, or ends with one newline.
+      - id: end-of-file-fixer
+      # trims trailing whitespace.
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 22.8.0
+    hooks:
+      - id: black
+        language_version: python3
+        exclude: ^(.+)\/migrations\/(.+)$
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        exclude: ^(.+)\/migrations\/(.+)$
+        # Extra flake8 checks
+        additional_dependencies: [
+            "flake8-bugbear",
+            "flake8-comprehensions",
+            "flake8-mutable",
+            "flake8-print",
+            "flake8-simplify",
+            # Custom flake8 check which also check against the null=True with CharField and TextField
+            "flake8-django",
+          ]
+        stages: [commit]
+
+  # Make sure we use new features of python and avoid old deprecated practices
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.38.0
+    hooks:
+      - id: pyupgrade
+        args: ["--py3-plus", "--py38-plus"]
+
+  # Similar to pyupgrade but fixes Django deprecation and new syntax
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: "1.10.0"
+    hooks:
+      - id: django-upgrade
+        args: [--target-version, "3.2"]
+
+  # run isort to enforce import organization
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
