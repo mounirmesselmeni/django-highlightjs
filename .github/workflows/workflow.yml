@@ -71,4 +71,5 @@ jobs:
       - name: Publish package
         if: matrix.python-version == '3.10' && github.ref == 'refs/heads/main'
         run: |
+          poetry build
           poetry publish --username=__token__ --password=${{ secrets.PYPI_SECRET }}
