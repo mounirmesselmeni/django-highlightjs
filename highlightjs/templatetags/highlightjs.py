@@ -1,4 +1,5 @@
 from django import template
+from django.utils.html import format_html
 
 from ..renderer import render_highlightjs
 from ..settings import (
@@ -77,7 +78,7 @@ def highlightjs_javascript(jquery=None):
     if url:
         javascript += f'<script src="{url}"></script>'
     javascript += "<script>hljs.initHighlightingOnLoad();</script>"
-    return javascript
+    return format_html(javascript)
 
 
 @register.simple_tag
