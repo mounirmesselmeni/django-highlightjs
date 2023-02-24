@@ -43,7 +43,7 @@ jobs:
           poetry install --with dev
       - name: Install Django
         run: |
-          poetry add django==${{ matrix.django-version }}
+          poetry run pip install django==${{ matrix.django-version }}
       - name: Cache pre-commit hooks
         if: matrix.python-version == '3.10' && matrix.django-version == '4.1'
         id: pre-commit-cache
