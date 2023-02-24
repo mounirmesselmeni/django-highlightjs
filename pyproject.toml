@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-highlightjs"
-version = "0.2.9"
+version = "0.2.10"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
 license = "mit"
@@ -37,9 +37,10 @@ Django = ">= 2"
 [tool.poetry.group.dev.dependencies]
 coverage = "~6"
 coveralls = "~3"
-black = "22.*"
+black = "23.*"
 isort = "5.*"
 pre-commit = "3.*"
+ruff = "^0.0.252"
 
 [build-system]
 requires = ["poetry-core"]
@@ -65,3 +66,41 @@ multi_line_output = 3
 line_length = 90
 default_section = "THIRDPARTY"
 skip = ["migrations", ".venv", ".pre-commit-cache"]
+
+[tool.ruff]
+# Docs: https://beta.ruff.rs/docs/
+# Rules: https://beta.ruff.rs/docs/rules/
+select = ["F", "E", "B", "C4", "EXE", "ISC", "ICN", "INP", "PIE", "SIM", "W", "T20", "UP", "T10", "G", "DJ001", "DJ008", "C90", "ERA"]
+# Later on might be useful C/C90 (Compexity), ERA (Found commented-out code), FBT
+ignore = ["B008", "SIM102"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["F", "E", "B", "C4", "EXE", "ISC", "ICN", "INP", "PIE", "SIM", "W", "T20", "UP"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pre-commit-cache",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "venv",
+    "docs",
+    "__pycache",
+    "**/migrations/*",
+]
+
+# Same as Black.
+line-length = 120
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.11.
+target-version = "py311"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10

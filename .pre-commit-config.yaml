@@ -7,7 +7,7 @@ repos:
   # Common builtin pre-commit hooks
   # See https://pre-commit.com/hooks.html for more hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.4.0
     hooks:
       # simply checks whether the files parse as valid python.
       - id: check-ast
@@ -23,39 +23,28 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/psf/black
-    rev: 22.8.0
+    rev: 23.1.0
     hooks:
       - id: black
         language_version: python3
         exclude: ^(.+)\/migrations\/(.+)$
 
-  - repo: https://github.com/pycqa/flake8
-    rev: 5.0.4
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    # Ruff version.
+    rev: "v0.0.252"
     hooks:
-      - id: flake8
-        exclude: ^(.+)\/migrations\/(.+)$
-        # Extra flake8 checks
-        additional_dependencies: [
-            "flake8-bugbear",
-            "flake8-comprehensions",
-            "flake8-mutable",
-            "flake8-print",
-            "flake8-simplify",
-            # Custom flake8 check which also check against the null=True with CharField and TextField
-            "flake8-django",
-          ]
-        stages: [commit]
+      - id: ruff
 
   # Make sure we use new features of python and avoid old deprecated practices
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.38.0
+    rev: v3.3.1
     hooks:
       - id: pyupgrade
         args: ["--py3-plus", "--py38-plus"]
 
   # Similar to pyupgrade but fixes Django deprecation and new syntax
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: "1.10.0"
+    rev: "1.13.0"
     hooks:
       - id: django-upgrade
         args: [--target-version, "3.2"]
