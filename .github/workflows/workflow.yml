@@ -63,9 +63,9 @@ jobs:
           # output coverage report
           poetry run coverage report
       - name: Publish coverage
-        # only run on python 3.10 and django 4.1
+        # only run on python 3.10 and django 4.2
         # no need to publish coverage for all python and django versions
-        if: matrix.python-version == '3.11' && matrix.django-version == '4.1'
+        if: matrix.python-version == '3.11' && matrix.django-version == '4.2'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
