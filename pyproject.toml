@@ -38,7 +38,7 @@ coveralls = "~3"
 black = "23.*"
 isort = "5.*"
 pre-commit = "3.*"
-ruff = ">=0.0.252,<0.0.270"
+ruff = ">=0.0.252,<0.0.282"
 
 [build-system]
 requires = ["poetry-core"]
