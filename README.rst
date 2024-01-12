@@ -89,8 +89,8 @@ Example template
 Requirements
 ------------
 
-- Python 3.8, 3.9, 3.10 or 3.11
-- Django >= 3
+- Python 3.10, 3.11 or 3.12
+- Django >= 4
 
 Contributions and pull requests for other Django and Python versions are welcome.
 
