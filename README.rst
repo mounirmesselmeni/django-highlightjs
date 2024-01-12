@@ -89,7 +89,7 @@ Example template
 Requirements
 ------------
 
-- Python 3.9, 3.10, 3.11 or 3.12
+- Python 3.10, 3.11 or 3.12
 - Django >= 4
 
 Contributions and pull requests for other Django and Python versions are welcome.
