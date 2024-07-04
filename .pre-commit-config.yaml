@@ -7,7 +7,7 @@ repos:
   # Common builtin pre-commit hooks
   # See https://pre-commit.com/hooks.html for more hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       # simply checks whether the files parse as valid python.
       - id: check-ast
@@ -22,35 +22,17 @@ repos:
       # trims trailing whitespace.
       - id: trailing-whitespace
 
-  - repo: https://github.com/psf/black
-    rev: 23.12.1
-    hooks:
-      - id: black
-        language_version: python3
-        exclude: ^(.+)\/migrations\/(.+)$
-
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     # Ruff version.
-    rev: "v0.1.12"
+    rev: "v0.5.0"
     hooks:
       - id: ruff
-
-  # Make sure we use new features of python and avoid old deprecated practices
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.15.0
-    hooks:
-      - id: pyupgrade
-        args: ["--py3-plus", "--py38-plus"]
+        args: [--fix]
+      - id: ruff-format
 
   # Similar to pyupgrade but fixes Django deprecation and new syntax
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: "1.15.0"
+    rev: "1.19.0"
     hooks:
       - id: django-upgrade
         args: [--target-version, "3.2"]
-
-  # run isort to enforce import organization
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
