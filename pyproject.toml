@@ -4,7 +4,7 @@ version = "0.2.12"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
 license = "mit"
-readme = "README.rst"
+readme = "README.md"
 packages = [{ include = "highlightjs" }]
 exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
 classifiers = [
