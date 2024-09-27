@@ -44,7 +44,7 @@ Django = ">= 3"
 coverage = "~7"
 coveralls = "~4"
 pre-commit = "3.*"
-ruff = "0.5.*"
+ruff = ">=0.5,<0.7"
 
 [build-system]
 requires = ["poetry-core"]
