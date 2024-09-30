@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
-        django-version: ["4.0", "4.1", "4.2", "5.0"]
+        django-version: ["4.2", "5.0", "5.1"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
         run: |
           poetry run pip install django~=${{ matrix.django-version }}
       - name: Cache pre-commit hooks
-        if: matrix.python-version == '3.11' && matrix.django-version == '5.0'
+        if: matrix.python-version == '3.11' && matrix.django-version == '5.1'
         id: pre-commit-cache
         uses: actions/cache@v2
         with:
@@ -54,7 +54,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pre-commit-hooks-
       - name: Run pre-commit
-        if: matrix.python-version == '3.11' && matrix.django-version == '5.0'
+        if: matrix.python-version == '3.11' && matrix.django-version == '5.1'
         run: |
           poetry run pre-commit run --all-files
       - name: Run tests and coverage
@@ -63,15 +63,14 @@ jobs:
           # output coverage report
           poetry run coverage report
       - name: Publish coverage
-        # only run on python 3.11 and django 5.0
         # no need to publish coverage for all python and django versions
-        if: matrix.python-version == '3.11' && matrix.django-version == '5.0'
+        if: matrix.python-version == '3.11' && matrix.django-version == '5.1'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: poetry run coveralls
       - name: Publish package
-        if: matrix.python-version == '3.11' && matrix.django-version == '5.0' && startsWith(github.ref, 'refs/tags')
+        if: matrix.python-version == '3.11' && matrix.django-version == '5.1' && startsWith(github.ref, 'refs/tags')
         run: |
           echo "Publishing package to PyPI"
           echo "poetry version: $(poetry --version)"

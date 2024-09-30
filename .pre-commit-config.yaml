@@ -1,7 +1,7 @@
 # Make sure pre-commit uses the same python version as we do
 default_language_version:
   # default language version for each language
-  python: python3.10
+  python: python3.11
 
 repos:
   # Common builtin pre-commit hooks
@@ -24,7 +24,7 @@ repos:
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     # Ruff version.
-    rev: "v0.5.0"
+    rev: "v0.6.8"
     hooks:
       - id: ruff
         args: [--fix]
@@ -32,7 +32,7 @@ repos:
 
   # Similar to pyupgrade but fixes Django deprecation and new syntax
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: "1.19.0"
+    rev: "1.21.0"
     hooks:
       - id: django-upgrade
         args: [--target-version, "3.2"]
