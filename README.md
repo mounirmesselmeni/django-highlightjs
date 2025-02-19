@@ -1,7 +1,6 @@
 # 🎉 Welcome to django-highlightjs 🎉
 
 ![Build Status](https://github.com/mounirmesselmeni/django-highlightjs/actions/workflows/workflow.yml/badge.svg)
-![Coverage Status](https://coveralls.io/repos/MounirMesselmeni/django-highlightjs/badge.png?branch=main)
 ![Latest Version](https://img.shields.io/pypi/v/django-highlightjs.svg)
 
 Use [Highlight.js](https://highlightjs.org) in your Django templates, the Django way.
@@ -80,7 +79,7 @@ All other styles are available at [highlight.js styles](https://github.com/isaga
 
 ## 🛠️ Requirements
 
-- Python 3.10, 3.11, or 3.12
+- Python 3.10, 3.11, 3.12 or 3.13
 - Django >= 4.2
 
 Contributions and pull requests for other Django and Python versions are welcome.
