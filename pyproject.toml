@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-highlightjs"
-version = "0.2.13"
+version = "0.2.14"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
 license = "mit"
@@ -22,6 +22,7 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
@@ -36,12 +37,11 @@ keywords = [
 ]
 
 [tool.poetry.dependencies]
-python = ">= 3.10 < 3.13"
+python = ">= 3.10 < 3.14"
 Django = ">= 4.2"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "~7"
-coveralls = "~4"
 pre-commit = ">=3,<5"
 ruff = ">=0.6,<0.10"
 
