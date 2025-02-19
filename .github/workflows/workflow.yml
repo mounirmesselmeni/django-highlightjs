@@ -62,11 +62,13 @@ jobs:
           poetry run coverage run --source=highlightjs manage.py test
           # output coverage report
           poetry run coverage report
+          # output coverage report in xml format
+          poetry run coverage xml
       - name: Publish coverage
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         uses: orgoro/coverage@v3.2
         with:
-          coverageFile: .coverage
+          coverageFile: coverage.xml
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish package
         if: matrix.python-version == '3.11' && matrix.django-version == '5.1' && startsWith(github.ref, 'refs/tags')
