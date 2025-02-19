@@ -66,7 +66,7 @@ jobs:
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         uses: orgoro/coverage@v3.2
         with:
-          coverageFile: path/to/coverage.xml
+          coverageFile: .coverage
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish package
         if: matrix.python-version == '3.11' && matrix.django-version == '5.1' && startsWith(github.ref, 'refs/tags')
