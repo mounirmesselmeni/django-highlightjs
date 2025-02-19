@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-highlightjs"
-version = "0.2.13"
+version = "0.2.14"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
 license = "mit"
