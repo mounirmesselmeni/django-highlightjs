@@ -55,6 +55,8 @@ jobs:
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         run: |
           poetry run pre-commit run --all-files
+        env:
+          PRE_COMMIT_HOME: $HOME/.cache/pre-commit
       - name: Run tests and coverage
         run: |
           poetry run coverage run --source=highlightjs manage.py test
