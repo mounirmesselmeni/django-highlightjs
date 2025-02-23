@@ -50,7 +50,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: $HOME/.cache/pre-commit
-          key: ${{ runner.os }}-pre-commit-hooks-${{ hashFiles('**/.pre-commit-config.yaml') }}
+          key: ${{ runner.os }}-${{ matrix.python-version }}-pre-commit-hooks-${{ hashFiles('**/.pre-commit-config.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pre-commit-hooks-
       - name: Run pre-commit
