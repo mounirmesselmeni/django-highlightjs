@@ -32,7 +32,7 @@ jobs:
           path: .venv
           key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-${{ hashFiles('poetry.lock') }}
           restore-keys: |
-            ${{ runner.os }}-poetry-v1-
+            ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-
       - name: Install Poetry
         run: pip install poetry
       - name: Set poetry to use virtualenvs.in-project true
@@ -51,8 +51,6 @@ jobs:
         with:
           path: $HOME/.cache/pre-commit
           key: ${{ runner.os }}-${{ matrix.python-version }}-pre-commit-hooks-${{ hashFiles('**/.pre-commit-config.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pre-commit-hooks-
       - name: Run pre-commit
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         run: |
