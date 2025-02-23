@@ -27,7 +27,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Cache Poetry virtual environment
         id: poetry-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: .venv
           key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-${{ hashFiles('poetry.lock') }}
@@ -47,7 +47,7 @@ jobs:
       - name: Cache pre-commit hooks
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         id: pre-commit-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: $HOME/.cache/pre-commit
           key: ${{ runner.os }}-${{ matrix.python-version }}-pre-commit-hooks-${{ hashFiles('**/.pre-commit-config.yaml') }}
