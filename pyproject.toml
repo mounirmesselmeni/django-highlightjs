@@ -1,67 +1,73 @@
-[tool.poetry]
+[project]
 name = "django-highlightjs"
 version = "0.2.14"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
-authors = ["Mounir Messelmeni <messelmeni.mounir@gmail.com>"]
-license = "mit"
+authors = [
+    { name = "Mounir Messelmeni", email = "messelmeni.mounir@gmail.com" },
+]
+requires-python = ">=3.10"
 readme = "README.md"
-packages = [{ include = "highlightjs" }]
-exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Environment :: Web Environment",
-  "Framework :: Django",
-  "Framework :: Django :: 4.2",
-  "Framework :: Django :: 5.0",
-  "Framework :: Django :: 5.1",
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Topic :: Software Development :: Libraries :: Python Modules",
-]
-homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
-repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
+license = "mit"
 keywords = [
-  "django",
-  "highlightjs",
-  "syntax",
-  "highlighter",
-  "syntax highlighter",
-  "highlight.js",
+    "django",
+    "highlightjs",
+    "syntax",
+    "highlighter",
+    "syntax highlighter",
+    "highlight.js",
 ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["Django>= 4.2"]
 
-[tool.poetry.dependencies]
-python = ">= 3.10 < 3.14"
-Django = ">= 4.2"
+[project.urls]
+Homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
+Repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
 
-[tool.poetry.group.dev.dependencies]
-coverage = "~7"
-pre-commit = ">=3,<5"
-ruff = ">=0.6,<0.12"
+[dependency-groups]
+dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.12"]
+
+[tool.hatch.build.targets.sdist]
+include = ["highlightjs"]
+exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
+
+[tool.hatch.build.targets.wheel]
+include = ["highlightjs"]
+exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
 exclude = [
-  ".git",
-  ".mypy_cache",
-  ".pre-commit-cache",
-  ".ruff_cache",
-  ".tox",
-  ".venv",
-  "venv",
-  "docs",
-  "__pycache",
-  "**/migrations/*",
+    ".git",
+    ".mypy_cache",
+    ".pre-commit-cache",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "venv",
+    "docs",
+    "__pycache",
+    "**/migrations/*",
 ]
 line-length = 120
 # Assume Python 3.11.
@@ -74,25 +80,25 @@ quote-style = "preserve"
 # Docs: https://beta.ruff.rs/docs/
 # Rules: https://beta.ruff.rs/docs/rules/
 select = [
-  "F",
-  "E",
-  "B",
-  "C4",
-  "EXE",
-  "ISC",
-  "ICN",
-  "INP",
-  "PIE",
-  "SIM",
-  "W",
-  "T20",
-  "UP",
-  "T10",
-  "G",
-  "DJ001",
-  "DJ008",
-  "C90",
-  "ERA",
+    "F",
+    "E",
+    "B",
+    "C4",
+    "EXE",
+    "ISC",
+    "ICN",
+    "INP",
+    "PIE",
+    "SIM",
+    "W",
+    "T20",
+    "UP",
+    "T10",
+    "G",
+    "DJ001",
+    "DJ008",
+    "C90",
+    "ERA",
 ]
 # Later on might be useful C/C90 (Compexity), ERA (Found commented-out code), FBT
 ignore = ["B008", "SIM102", "ISC001"]
