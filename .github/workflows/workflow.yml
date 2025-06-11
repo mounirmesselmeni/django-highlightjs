@@ -21,29 +21,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Cache Poetry virtual environment
-        id: poetry-cache
-        uses: actions/cache@v4
-        with:
-          path: .venv
-          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-${{ hashFiles('poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.python-version }}-poetry-v1-
-      - name: Install Poetry
-        run: pip install poetry
-      - name: Set poetry to use virtualenvs.in-project true
-        run: |
-          poetry config virtualenvs.in-project true
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
       - name: Install dependencies
         run: |
-          poetry install --with dev
+          uv sync --locked --all-extras --dev
       - name: Install Django
         run: |
-          poetry run pip install django~=${{ matrix.django-version }}
+          uv run pip install django~=${{ matrix.django-version }}
       - name: Cache pre-commit hooks
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         id: pre-commit-cache
@@ -54,16 +43,16 @@ jobs:
       - name: Run pre-commit
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         run: |
-          poetry run pre-commit run --all-files
+          uv run pre-commit run --all-files
         env:
           PRE_COMMIT_HOME: $HOME/.cache/pre-commit
       - name: Run tests and coverage
         run: |
-          poetry run coverage run --source=highlightjs manage.py test
+          uv run coverage run --source=highlightjs manage.py test
           # output coverage report
-          poetry run coverage report
+          uv run coverage report
           # output coverage report in xml format
-          poetry run coverage xml
+          uv run coverage xml
       - name: Publish coverage
         if: matrix.python-version == '3.13' && matrix.django-version == '5.1'
         uses: orgoro/coverage@v3.2
@@ -75,5 +64,7 @@ jobs:
         run: |
           echo "Publishing package to PyPI"
           echo "poetry version: $(poetry --version)"
-          poetry build
-          poetry publish --username=__token__ --password=${{ secrets.PYPI_SECRET }}
+          uv build
+          uv publish --username=__token__ --password=${{ secrets.PYPI_SECRET }}
+      - name: Minimize uv cache
+        run: uv cache prune --ci
