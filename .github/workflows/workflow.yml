@@ -34,14 +34,14 @@ jobs:
         run: |
           uv run pip install django~=${{ matrix.django-version }}
       - name: Cache pre-commit hooks
-        if: matrix.python-version == '3.14' && matrix.django-version == '6.0'
+        if: matrix.python-version == '3.13' && matrix.django-version == '6.0'
         id: pre-commit-cache
         uses: actions/cache@v4
         with:
           path: $HOME/.cache/pre-commit
           key: ${{ runner.os }}-${{ matrix.python-version }}-pre-commit-hooks-${{ hashFiles('**/.pre-commit-config.yaml') }}
       - name: Run pre-commit
-        if: matrix.python-version == '3.14' && matrix.django-version == '6.0'
+        if: matrix.python-version == '3.13' && matrix.django-version == '6.0'
         run: |
           uv run pre-commit run --all-files
         env:
