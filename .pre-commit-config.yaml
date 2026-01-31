@@ -1,7 +1,7 @@
 # Make sure pre-commit uses the same python version as we do
 default_language_version:
   # default language version for each language
-  python: python3.14
+  python: python3.13
 
 repos:
   # Common builtin pre-commit hooks
