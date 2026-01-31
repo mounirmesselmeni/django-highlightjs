@@ -1,5 +1,6 @@
 from django import template
 from django.utils.html import format_html
+from django.utils.safestring import mark_safe
 
 from ..renderer import render_highlightjs
 from ..settings import (
@@ -73,12 +74,12 @@ def highlightjs_javascript(jquery=None):
     if jquery:
         url = highlightjs_jquery_url()
         if url:
-            javascript += f'<script src="{url}"></script>'
+            javascript += format_html('<script src="{}"></script>', url)
     url = highlightjs_url()
     if url:
-        javascript += f'<script src="{url}"></script>'
-    javascript += "<script>hljs.initHighlightingOnLoad();</script>"
-    return format_html(javascript)
+        javascript += format_html('<script src="{}"></script>', url)
+    javascript += mark_safe("<script>hljs.initHighlightingOnLoad();</script>")
+    return javascript
 
 
 @register.simple_tag
