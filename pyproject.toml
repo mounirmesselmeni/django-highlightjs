@@ -1,6 +1,6 @@
 [project]
 name = "django-highlightjs"
-version = "0.2.14"
+version = "0.2.15"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = [
     { name = "Mounir Messelmeni", email = "messelmeni.mounir@gmail.com" },
