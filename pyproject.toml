@@ -20,9 +20,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
-    "Framework :: Django :: 5.1",
     "Framework :: Django :: 5.2",
     "Framework :: Django :: 6.0",
     "Intended Audience :: Developers",
@@ -30,21 +27,20 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["Django>= 4.2"]
+dependencies = ["Django>= 5.2"]
 
 [project.urls]
 Homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
 Repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
 
 [dependency-groups]
-dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.13"]
+dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.16"]
 
 [tool.hatch.build.targets.sdist]
 include = ["highlightjs"]
