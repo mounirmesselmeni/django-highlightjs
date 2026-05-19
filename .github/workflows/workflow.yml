@@ -55,7 +55,7 @@ jobs:
           uv run coverage xml
       - name: Publish coverage
         if: matrix.python-version == '3.14' && matrix.django-version == '6.0'
-        uses: orgoro/coverage@v3.2
+        uses: orgoro/coverage@v3.3
         with:
           coverageFile: coverage.xml
           token: ${{ secrets.GITHUB_TOKEN }}
