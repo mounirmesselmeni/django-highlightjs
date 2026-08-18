@@ -18,9 +18,9 @@ jobs:
       matrix:
         python-version: ["3.11", "3.12", "3.13", "3.14"]
         django-version: ["5.2", "6.0", "6.1"]
-      exclude:
-        - python-version: "3.11"
-          django-version: "6.1"
+        exclude:
+          - python-version: "3.11"
+            django-version: "6.1"
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
