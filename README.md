@@ -79,8 +79,8 @@ All other styles are available at [highlight.js styles](https://github.com/isaga
 
 ## 🛠️ Requirements
 
-- Python 3.10, 3.11, 3.12 or 3.13
-- Django >= 4.2
+- Python 3.11, 3.12 or 3.13
+- Django >= 5.2
 
 Contributions and pull requests for other Django and Python versions are welcome.
 

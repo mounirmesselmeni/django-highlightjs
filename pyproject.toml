@@ -1,6 +1,6 @@
 [project]
 name = "django-highlightjs"
-version = "0.2.14"
+version = "0.2.15"
 description = "A Django app to easyily integrate highlight.js syntax highlighter."
 authors = [
     { name = "Mounir Messelmeni", email = "messelmeni.mounir@gmail.com" },
@@ -20,31 +20,28 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
-    "Framework :: Django :: 5.1",
     "Framework :: Django :: 5.2",
     "Framework :: Django :: 6.0",
+    "Framework :: Django :: 6.1",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["Django>= 4.2"]
+dependencies = ["Django>= 5.2"]
 
 [project.urls]
 Homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
 Repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
 
 [dependency-groups]
-dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.13"]
+dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.17"]
 
 [tool.hatch.build.targets.sdist]
 include = ["highlightjs"]
