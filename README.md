@@ -22,7 +22,7 @@ Use [Highlight.js](https://highlightjs.org) in your Django templates, the Django
 2. Add to `INSTALLED_APPS` in your `settings.py`:
 
    ```python
-   'highlightjs',
+   ('highlightjs',)
    ```
 
 3. In your templates, load the `highlightjs` library and use the `highlightjs_*` tags.
@@ -35,16 +35,16 @@ The `HIGHLIGHTJS` dict variable contains these settings and defaults:
 
 ```python
 HIGHLIGHTJS = {
-   # The URL to the jQuery JavaScript file
-   'jquery_url': '//code.jquery.com/jquery.min.js',
-   # The highlight.js base URL
-   'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js',
-   # The complete URL to the highlight.js CSS file
-   'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/{0}.min.css',
-   # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
-   'include_jquery': False,
-   # The default used style.
-   'style': 'monokai_sublime',
+    # The URL to the jQuery JavaScript file
+    'jquery_url': '//code.jquery.com/jquery.min.js',
+    # The highlight.js base URL
+    'base_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js',
+    # The complete URL to the highlight.js CSS file
+    'css_url': '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/{0}.min.css',
+    # Include jQuery with highlight.js JavaScript (affects django-highlightjs template tags)
+    'include_jquery': False,
+    # The default used style.
+    'style': 'monokai_sublime',
 }
 ```
 
@@ -52,7 +52,7 @@ Usage in your `settings.py`:
 
 ```python
 HIGHLIGHTJS = {
-   'style': 'github',
+    'style': 'github',
 }
 ```
 
