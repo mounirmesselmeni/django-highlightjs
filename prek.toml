@@ -1,0 +1,29 @@
+[default_language_version]
+python = "python3.14"
+
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+hooks = [
+  { id = "check-ast" },
+  { id = "check-case-conflict" },
+  { id = "check-merge-conflict" },
+  { id = "debug-statements" },
+  { id = "end-of-file-fixer" },
+  { id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.16.10"
+hooks = [
+  { id = "ruff", args = ["--fix"] },
+  { id = "ruff-format" },
+]
+
+[[repos]]
+repo = "https://github.com/adamchainz/django-upgrade"
+rev = "1.33.0"
+hooks = [
+  { id = "django-upgrade", args = ["--target-version", "5.2"] },
+]

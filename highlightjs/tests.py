@@ -1,8 +1,9 @@
+from unittest.mock import patch
+
 from django.template import Context, Template
 from django.test import TestCase
 from django.test.utils import override_settings
 from django.utils.html import escape
-
 from . import settings
 
 
@@ -14,6 +15,11 @@ class HighlightjsTemplateTagTests(TestCase):
     def test_highlightjs_javascript_tag(self):
         out = Template("{% load highlightjs %}{% highlightjs_javascript %}").render(Context())
         self.assertIn(settings.highlightjs_url(), out)
+
+    @patch("highlightjs.templatetags.highlightjs.highlightjs_url", return_value=None)
+    def test_highlightjs_javascript_tag_without_highlightjs_url(self, _highlightjs_url):
+        out = Template("{% load highlightjs %}{% highlightjs_javascript jquery=1 %}").render(Context())
+        self.assertEqual(out, "")
 
     @override_settings(HIGHLIGHTJS={"include_jquery": False})
     def test_highlightjs_javascript_tag_without_jquery(self):

@@ -1,7 +1,7 @@
 [project]
 name = "django-highlightjs"
-version = "0.2.16"
-description = "A Django app to easyily integrate highlight.js syntax highlighter."
+version = "0.2.17"
+description = "A Django app to easily integrate the highlight.js syntax highlighter."
 authors = [
     { name = "Mounir Messelmeni", email = "messelmeni.mounir@gmail.com" },
 ]
@@ -41,10 +41,10 @@ Homepage = "https://github.com/mounirmesselmeni/django-highlightjs/"
 Repository = "https://github.com/mounirmesselmeni/django-highlightjs/"
 
 [dependency-groups]
-dev = ["coverage>=7,<8", "pre-commit>=3,<5", "ruff>=0.6,<0.17"]
+dev = ["coverage>=7,<8", "prek>=0.5.4,<1", "ruff>=0.6,<0.17"]
 
 [tool.hatch.build.targets.sdist]
-include = ["highlightjs"]
+include = ["highlightjs", "prek.toml", "CHANGELOG.md"]
 exclude = ["highlightjs/tests.py", "highlightjs/testsettings.py"]
 
 [tool.hatch.build.targets.wheel]
@@ -60,7 +60,7 @@ build-backend = "hatchling.build"
 exclude = [
     ".git",
     ".mypy_cache",
-    ".pre-commit-cache",
+    ".prek-cache",
     ".ruff_cache",
     ".tox",
     ".venv",

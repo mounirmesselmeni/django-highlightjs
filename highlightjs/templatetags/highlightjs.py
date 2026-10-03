@@ -68,16 +68,18 @@ def highlightjs_javascript(jquery=None):
     """
 
     javascript = ""
+    highlightjs_js_url = highlightjs_url()
+    if not highlightjs_js_url:
+        return javascript
+
     # See if we have to include jQuery
     if jquery is None:
         jquery = get_highlightjs_setting("include_jquery", False)
     if jquery:
-        url = highlightjs_jquery_url()
-        if url:
-            javascript += format_html('<script src="{}"></script>', url)
-    url = highlightjs_url()
-    if url:
-        javascript += format_html('<script src="{}"></script>', url)
+        jquery_url = highlightjs_jquery_url()
+        if jquery_url:
+            javascript += format_html('<script src="{}"></script>', jquery_url)
+    javascript += format_html('<script src="{}"></script>', highlightjs_js_url)
     javascript += mark_safe("<script>hljs.initHighlightingOnLoad();</script>")
     return javascript
 
